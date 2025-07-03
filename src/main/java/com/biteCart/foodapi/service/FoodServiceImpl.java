@@ -5,6 +5,7 @@ import com.biteCart.foodapi.io.FoodRequest;
 import com.biteCart.foodapi.io.FoodResponse;
 import com.biteCart.foodapi.repository.FoodRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -19,12 +20,12 @@ import java.io.IOException;
 import java.util.UUID;
 
 @Service
-@AllArgsConstructor
 public class FoodServiceImpl implements FoodService{
 
-
-    private final S3Client s3Client;
-    private final FoodRepository foodRepository;
+    @Autowired
+    private S3Client s3Client;
+    @Autowired
+    private FoodRepository foodRepository;
 
 
     @Value("${aws.s3.bucketname}")
@@ -56,11 +57,11 @@ public class FoodServiceImpl implements FoodService{
 
     @Override
     public FoodResponse addFood(FoodRequest request, MultipartFile file) {
-        FoodEntity newfoodEntity = convertToEntity(request);
+        FoodEntity newFoodEntity = convertToEntity(request);
         String imageUrl =uploadFile(file);
-        newfoodEntity.setImageUrl(imageUrl);
-        newfoodEntity = foodRepository.save(newfoodEntity);
-        return convertToResponse(newfoodEntity);
+        newFoodEntity.setImageUrl(imageUrl);
+        newFoodEntity = foodRepository.save(newFoodEntity);
+        return convertToResponse(newFoodEntity);
     }
     private FoodEntity convertToEntity(FoodRequest request){
         return FoodEntity.builder()
