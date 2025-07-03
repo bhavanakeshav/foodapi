@@ -12,7 +12,7 @@ import software.amazon.awssdk.services.s3.endpoints.internal.Value;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Document(collation = "foods")
+@Document(collection = "foods")
 public class FoodEntity {
     @Id
     private String id;
