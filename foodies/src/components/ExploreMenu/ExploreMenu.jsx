@@ -18,6 +18,7 @@ const ExploreMenu = ({ category, setCategory }) => {
 
     return (
         <div className="explore-menu position-relative">
+            <hr />
             <h1 className="d-flex align-items-center justify-content-between">
                 Explore Our Menu
 

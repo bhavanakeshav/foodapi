@@ -1,0 +1,18 @@
+.header-divi {
+    position: relative;
+
+    /* Light tint + background image (adjust alpha as needed) */
+    background-image: url("../../assets/image.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Optional: give the hero some height and vertical centering */
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+
+    /* Optional subtle shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}

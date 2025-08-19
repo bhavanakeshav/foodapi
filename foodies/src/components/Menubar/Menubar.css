@@ -3,15 +3,34 @@
 
 }
 
-.menubar-right {
+.menu-user {
     display: flex;
     align-items: center;
     gap: 25px;
     margin-right: 25px;
 }
 
-.menu-user {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+.active {
+    color: tomato !important;
+}
+
+.menubar-appname {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    padding: 6px 18px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    /* Pink to orange */
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(255, 75, 43, 0.3);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.menubar-appname:hover {
+    transform: translateX(-50%) scale(1.05);
 }

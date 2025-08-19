@@ -1,0 +1,86 @@
+/* Card shell */
+.auth-card {
+    max-width: 560px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+/* Header strip */
+.auth-header {
+    background: linear-gradient(135deg, #0062cc, #0096ff);
+    color: #fff;
+    padding: 20px;
+}
+
+.auth-body {
+    padding: 30px;
+}
+
+/* Inputs */
+.form-control {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+    transition: border-color .2s ease;
+}
+
+.form-control:focus {
+    border-color: #0062cc;
+    box-shadow: none;
+}
+
+/* Right-side icons */
+.icon-btn {
+    position: absolute;
+    right: 12px;
+    top: 42px;
+    /* aligns with input height/label */
+    border: 0;
+    background: transparent;
+    color: #666;
+    padding: 0;
+}
+
+.bi-envelope {
+    pointer-events: none;
+}
+
+/* decorative */
+
+/* Button */
+.btn-login {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #0062cc, #0096ff);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: transform .2s ease, box-shadow .2s ease;
+    margin-top: 6px;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 98, 204, .3);
+}
+
+/* Footer link */
+.register-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: .9rem;
+}
+
+.login-container {
+    background-image: url("../../assets/register.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}

@@ -2,6 +2,10 @@
     display: none;
 }
 
+.explore-menu h1 {
+    color: #813333;
+}
+
 .explore-menu-item {
     scrollbar-width: none;
 }

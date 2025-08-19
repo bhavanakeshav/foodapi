@@ -13,6 +13,7 @@ const ExploreFood = () => {
                         <form onSubmit={(e) => e.preventDefault()}>
                             <div className="input-group mb-3">
                                 <select className='form-select mt-2 ' style={{ 'maxWidth': '150px' }} onChange={(e) => setCategory(e.target.value)}>
+                                    <option value="All">All</option>
                                     <option value="Biriyani">Biriyani</option>
                                     <option value="Pizza">Pizza</option>
                                     <option value="Rolls">Rolls</option>
