@@ -2,23 +2,23 @@ import React, { useRef } from 'react';
 import { categories } from '../../assets/assets';
 import './ExploreMenu.css';
 
+
 const ExploreMenu = ({ category, setCategory }) => {
 
     const menuRef = useRef(null);
     const scrollLeft = () => {
         if (menuRef.current) {
-            menuRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+            menuRef.current.scrollBy({ left: -200, behaviour: 'smooth' });
         }
     };
     const scrollRight = () => {
         if (menuRef.current) {
-            menuRef.current.scrollBy({ left: 200, behavior: 'smooth' });
+            menuRef.current.scrollBy({ left: 200, behaviour: 'smooth' });
         }
     };
 
     return (
         <div className="explore-menu position-relative">
-            <hr />
             <h1 className="d-flex align-items-center justify-content-between">
                 Explore Our Menu
 
@@ -27,13 +27,13 @@ const ExploreMenu = ({ category, setCategory }) => {
                     <i className="bi bi-arrow-right-circle scroll-icon" onClick={scrollRight}></i>
                 </div>
             </h1>
-            <p> Explore curated lists of dishes from our top categories</p>
+            <p> Explore the dishes from variery of categories</p>
             <div className="d-flex justify-content-between gap-4 overflow-auto explore-menu-list" ref={menuRef}>
                 {
                     categories.map((item, index) => {
                         return (
                             <div key={index} className="text-center explore-menu-list-item" onClick={() => setCategory(prev => prev === item.category ? 'All' : item.category)}>
-                                <img src={item.icon} alt="" className={item.category === category ? 'rounded-circle active' : 'rounded-cirlce'} height={128} width={128} />
+                                <img src={item.icon} alt="" className={item.category === category ? 'rounded-circle active' : 'rounded-circle'} height={128} width={128} />
                                 <p className='mt-2 fw-bold'> {item.category}</p>
                             </div>
                         )

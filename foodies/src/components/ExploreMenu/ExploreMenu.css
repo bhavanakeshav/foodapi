@@ -1,4 +1,4 @@
-.explore-menu-list::webkit-scrollbar {
+.explore-menu-list::-webkit-scrollbar {
     display: none;
 }
 
@@ -46,6 +46,6 @@
 }
 
 .explore-menu-list-item .active {
-    border: 4px solid #087acb;
+    border: 4px solid #087acb !important;
     padding: 2px;
 }
