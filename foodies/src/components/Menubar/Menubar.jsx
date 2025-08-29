@@ -6,9 +6,17 @@ import { StoreContext } from '../../context/storeContext';
 
 const Menubar = () => {
     const [active, setActive] = useState('home');
-    const { quantities } = useContext(StoreContext);
+    const { quantities, token, setToken, setQuantities } = useContext(StoreContext);
     const uniqueItemsInCart = Object.values(quantities).filter(qty => qty > 0).length;
     const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.removeItem('token');
+        setToken("");
+        navigate("/");
+        setQuantities({});
+
+    }
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -20,7 +28,7 @@ const Menubar = () => {
                 </Link>
 
                 {/* Center: title (ABSOLUTE CENTER) */}
-                <div className="menubar-appname">BiteCart</div>
+                <div className="menubar-appname" onClick={() => navigate('/')}>BiteCart</div>
 
                 {/* Mobile toggler */}
                 <button
@@ -58,8 +66,24 @@ const Menubar = () => {
                                 </span>
                             </div>
                         </Link>
-                        <button className="btn btn-outline-primary" onClick={() => navigate('/login')}>Login</button>
-                        <button className="btn btn-outline-success" onClick={() => navigate('/register')}>Register</button>
+                        {
+                            !token ?
+                                <>
+                                    <button className="btn btn-outline-primary" onClick={() => navigate('/login')}>Login</button>
+                                    <button className="btn btn-outline-success" onClick={() => navigate('/register')}>Register</button>
+                                </>
+                                : <div className="dropdown text-end">
+                                    <a href="#" className="d-block link-body-emphasis text-decoraqtion-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src={assets.profile} alt="" width={32} height={32} className='rounded-circle' />
+                                    </a>
+                                    <ul className='dropdown-menu dropdown-menu-end text-small cursor-pointer'>
+                                        <li className='dropdown-item' onClick={() => navigate('myorders')}> Orders </li>
+                                        <li className='dropdown-item' onClick={() => navigate('myprofile')}> My Profile </li>
+                                        <li className='dropdown-item' onClick={logout}> Logout </li>
+                                    </ul>
+                                </div>
+
+                        }
                     </div>
                 </div>
             </div>

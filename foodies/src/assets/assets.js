@@ -7,10 +7,12 @@ import biriyani from './biriyani.jpeg';
 import spring_rolls from './spring_rolls.jpeg';
 import Sundae from './Sundae.jpeg';
 import pizza from './pizza.jpeg';
+import profile from './profile.png';
 
 export const assets = {
     logo,
-    cart
+    cart,
+    profile
 }
 
 export const categories = [

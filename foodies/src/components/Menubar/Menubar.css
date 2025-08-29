@@ -34,3 +34,32 @@
 .menubar-appname:hover {
     transform: translateX(-50%) scale(1.05);
 }
+
+/* Fix dropdown width expansion */
+.dropdown {
+    position: relative;
+}
+
+/* Position the dropdown menu to open left instead of expanding container */
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    /* Push it left-aligned with profile image */
+    left: auto;
+    /* Prevent growing left */
+    top: 100%;
+    /* Drop below avatar */
+    transform: none;
+    /* Remove unwanted shifting */
+    z-index: 1000;
+    min-width: 150px;
+    white-space: nowrap;
+}
+
+.navbar .container-fluid {
+    overflow: visible;
+}
+
+.dropdown-menu li {
+    cursor: pointer;
+}
