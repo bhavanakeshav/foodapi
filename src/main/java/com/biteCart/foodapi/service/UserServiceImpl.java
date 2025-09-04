@@ -36,6 +36,15 @@ public class UserServiceImpl implements UserService{
         return loggedInUser.getId();
     }
 
+    @Override
+    public UserResponse getLoggedInUserProfile() {
+        String userEmail = authenticationFacade.getAuthentication().getName();
+        UserEntity user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+        return convertToResponse(user);
+    }
+
     private UserEntity convertToEntity(UserRequest request){
         return UserEntity.builder()
                 .email(request.getEmail())
@@ -47,7 +56,7 @@ public class UserServiceImpl implements UserService{
     private UserResponse convertToResponse(UserEntity registeredUser){
          return UserResponse.builder()
                 .id(registeredUser.getId())
-                .name(registeredUser.getEmail())
+                .name(registeredUser.getName())
                 .email(registeredUser.getEmail())
                 .build();
     }

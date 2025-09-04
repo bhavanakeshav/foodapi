@@ -8,4 +8,6 @@ public interface UserService {
 
     String findByUserId();
 
+    UserResponse getLoggedInUserProfile();
+
 }
