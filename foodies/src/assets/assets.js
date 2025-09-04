@@ -8,11 +8,13 @@ import spring_rolls from './spring_rolls.jpeg';
 import Sundae from './Sundae.jpeg';
 import pizza from './pizza.jpeg';
 import profile from './profile.png';
+import delivery from './delivery.png';
 
 export const assets = {
     logo,
     cart,
-    profile
+    profile,
+    delivery
 }
 
 export const categories = [

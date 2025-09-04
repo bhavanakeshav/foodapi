@@ -6,6 +6,6 @@ import upload from './upload.png';
 export const assets = {
     logo,
     logo1,
-    parcel, 
+    parcel,
     upload
 };
